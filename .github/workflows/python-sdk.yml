@@ -1,16 +1,6 @@
 name: Python SDK
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'python-sdk/**'
-      - '.github/workflows/python-sdk.yml'
-  pull_request:
-    branches: [main]
-    paths:
-      - 'python-sdk/**'
-      - '.github/workflows/python-sdk.yml'
   workflow_dispatch:
 
 permissions:
