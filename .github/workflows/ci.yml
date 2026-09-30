@@ -1,15 +1,8 @@
 name: CI
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
-# If several workflows fire on the same commit (push + PR, or rapid
-# pushes), don't queue a pile of redundant runs: cancel the superseded
-# ones. This reduces runner load and avoids the resource-exhaustion
-# pattern where jobs wait forever for a hosted runner.
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
